@@ -10,3 +10,4 @@ app.get('/ads', (req,res) => {
 app.listen(3000, () => {
     console.log("O app ta na porta 3000")
 })
+// intellicode
