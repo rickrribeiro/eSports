@@ -1,0 +1,1 @@
+rodar o isntall sempre com expo install
