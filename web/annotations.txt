@@ -1,3 +1,5 @@
 react:
 components: Complete component
 propriedades: components properties
+qualquer mudança de estado da um reload em todo component. Cuidado pq pode repetir chamadas ou perder dados
+hooks: funções que acoplam um comportamento dentro de um componente
