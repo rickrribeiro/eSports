@@ -1,5 +1,5 @@
 import {View, TouchableOpacity, Image, FlatList, Text} from 'react-native';
-import { Background, Heading, DuoCard } from '../../components';
+import { Background, Heading, DuoCard, DuoMatch } from '../../components';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './styles'
 import { useNavigation, useRoute } from '@react-navigation/native'
@@ -30,7 +30,7 @@ export function Game() {
     }, []);
 
     async function getDiscordUser(adsId: string) {
-        fetch(`http://192.168.0.100:3333/ads/${adsId}/discord`)
+        fetch(`http://192.168.0.31:3000/ads/${adsId}/discord`)
           .then(response => response.json())
           .then(data => setDiscordDuoSelected(data.discord))
       }
@@ -80,6 +80,11 @@ export function Game() {
                         </Text>
                     }
                     />
+            <DuoMatch
+                visible={discordDuoSelected.length >0}
+                discord={discordDuoSelected}
+                onClose={()=>setDiscordDuoSelected('')}
+            />
             </SafeAreaView>
         </Background >
     )
